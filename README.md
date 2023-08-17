@@ -1,4 +1,4 @@
-# Demosaicing a Time-Varying Exposures Array for Snapshot HDR Imaging
+# Joint Demosaicing and Deghosting of Time-Varying Exposures for Single-Shot HDR Imaging
 
 <img src="static/teaser.PNG" width="40%" height="50%" title="teaser"></img>
 
@@ -13,13 +13,7 @@ Also, we create a dataset of quad Bayer sensor input with varying exposures and 
 
 ### Abstraction
 
-> Spatial resolution of an image sensor has increased significantly, allowing us to capture additional information, such as spatially-varying multiple exposures. Quad-Bayer patterned sensors have become popular, enabling snapshot HDR imaging.
-> However, the quad-Bayer pattern compromises spatial resolution for multiple exposures and colors in results. Also, the general quad-Bayer sensor controls exposures by gain rather than the actual exposure time, and thus the extension of dynamic range has been insignificant.
-> While time-varying multiple exposures are desirable for high-quality HDR imaging, it is inapplicable to dynamic scenes in general, requiring an additional deghosting method. 
-> In this work, we propose a snapshot HDR demosaicing method, which takes time-varying multiple exposures as input and jointly solves both demosaicing and deghosting problems from the quad-Bayer patterned input. 
-> Our method consists of a feature-extraction module to handle mosaiced multiple exposures and a U-net style multiscale transformer module to register spatial displacements of multiple exposures and colors to obtain a high-quality HDR image from a quad-Bayer RAW image. 
-> We create a dataset of quad-Bayer sensor input with varying exposures and colors and train our network using our dataset.
-> Results validate that our method outperforms baseline HDR reconstruction methods with both synthetic and real datasets.
+> The quad-Bayer patterned image sensor has made significant improvements in spatial resolution over recent years due to advancements in image sensor technology. This has enabled single-shot high-dynamic-range (HDR) imaging using spatially varying multiple exposures. Popular methods for multi-exposure array sensors involve varying the gain of each exposure, but this does not effectively change the photoelectronic energy in each exposure. Consequently, HDR images produced using gain-based exposure variation may suffer from noise and details being saturated. To address this problem, we intend to use time-varying exposures in quad-Bayer patterned sensors. This approach allows long-exposure pixels to receive more photon energy than short- or middle-exposure pixels, resulting in higher-quality HDR images. However, time-varying exposures are not ideal for dynamic scenes and require an additional deghosting method. To tackle this issue, we propose a single-shot HDR demosaicing method that takes time-varying multiple exposures as input and jointly solves both the demosaicing and deghosting problems. Our method uses a feature-extraction module to handle mosaiced multiple exposures and a multiscale transformer module to register spatial displacements of multiple exposures and colors. We also created a dataset of quad-Bayer sensor input with time-varying exposures and trained our network using this dataset. Results demonstrate that our method outperforms baseline HDR reconstruction methods with both synthetic and real datasets. With our method, we can achieve high-quality HDR images in challenging lighting conditions.
 
 
 [Presentation file](https://drive.google.com/file/d/1sJswcXjly7GI8QgXUr1gs9F5Adcq33TW/view?usp=share_link) (Google Drive)
@@ -58,8 +52,8 @@ pip install -r "requirements.txt"
 Follow these instructions:
 1. Clone our repository
 ```
-git clone https://github.com/kimjw0623/HDR_Imaging.git
-cd HDR_Imaging
+git clone git@github.com:KAIST-VCLAB/singshot-hdr-demosaicing.git
+cd singshot-hdr-demosaicing
 ```
 
 2. Make conda enviornment
