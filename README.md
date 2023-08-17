@@ -1,5 +1,8 @@
 # Joint Demosaicing and Deghosting of Time-Varying Exposures for Single-Shot HDR Imaging
 
+This is the official repository of \
+**Joint Demosaicing and Deghosting of Time-Varying Exposures for Single-Shot HDR Imaging.** *Jungwoo Kim, Min H. Kim.* ICCV 2023
+
 <img src="static/teaser.PNG" width="40%" height="50%" title="teaser"></img>
 
 ### Challenges
