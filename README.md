@@ -42,13 +42,6 @@ Quantitative and qualitative results of our model. Our model outperforms baselin
 
 This repository is built in Pytorch 1.9.0 and tested on Ubuntu 16.04 enviornment (Python3.7, CUDA10.2, cuDNN7.6).
 
-Or you can just pull official docker image from Dockerhub and istall dependencies:
-```
-docker pull pytorch/pytorch:1.9.0-cuda10.2-cudnn7-runtime
-git clone https://github.com/kimjw0623/HDR_Imaging.git
-pip install -r "requirements.txt"
-```
-
 Follow these instructions:
 1. Clone our repository
 ```
@@ -69,7 +62,7 @@ pip install -r "requirements.txt"
 ```
 
 ## Demo
-First download our [pretrained model](https://drive.google.com/file/d/19W4kWG1YngX10CCT-f9rn7TdqIIpunjc/view?usp=sharing) and put best_psnr_mu.pt file in `/code/models/`.
+First download our [pretrained model](https://drive.google.com/file/d/19W4kWG1YngX10CCT-f9rn7TdqIIpunjc/view?usp=sharing) and put best_psnr_mu.pt file in `code/models/best_psnr_mu.pt`.
 
 To test pre-trained models, run below code:
 ```
