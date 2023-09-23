@@ -10,7 +10,7 @@ This is the official repository of \
 The spatially-varying exposure input has low spatial resolution and different motion blur for each exposure level (b).
 
 Our network restores HDR images (c) from [quad Bayer patterned sensor](https://semiconductor.samsung.com/image-sensor/mobile-image-sensor/isocell-gn1/) images (a) in an end-to-end manner.
-We jointly solve demosaicing and deblurring problems to achieve a high-quality snapshot HDR image from the quad-Bayer pattern.
+We jointly solve demosaicing and deghosting problems to achieve a high-quality snapshot HDR image from the quad-Bayer pattern.
 
 Also, we create a dataset of quad Bayer sensor input with varying exposures and colors using the existing HDR video dataset.
 
@@ -42,7 +42,7 @@ Quantitative and qualitative results of our model. Our model outperforms baselin
 
 This repository is built in Pytorch 1.9.0 and tested on Ubuntu 16.04 enviornment (Python3.7, CUDA10.2, cuDNN7.6).
 
-Follow these instructions:
+Please follow below instructions:
 1. Clone our repository
 ```
 git clone git@github.com:KAIST-VCLAB/singshot-hdr-demosaicing.git
@@ -64,7 +64,7 @@ pip install -r "requirements.txt"
 ## Demo
 First download our [pretrained model](https://drive.google.com/file/d/19W4kWG1YngX10CCT-f9rn7TdqIIpunjc/view?usp=sharing) and put best_psnr_mu.pt file in `code/models/best_psnr_mu.pt`.
 
-To test pre-trained models, run below code:
+To run demo with pre-trained models, run below code:
 ```
 cd code
 python test.py
